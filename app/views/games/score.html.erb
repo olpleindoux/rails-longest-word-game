@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="result">
+    <h2>Your result: </h2>
+
+    <p>Letter available: <%= @letters_availables %></p>
+    <p>Your proposition: <%= @word %></p>
+  </div>
+  <div class="score_result">
+   <p><%= @game_result[:message] %></p>
+   <p>Your score : <%= @game_result[:score].round(2) %></p>
+   <p>time to find: <%= @game_result[:time].round(2) %></p>
+
+
+  </div>
+  <h3 class="link"><%= link_to "Play again :)", new_path %></h3>
+</div>

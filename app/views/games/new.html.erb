@@ -1,0 +1,17 @@
+<h1>Welcome on letters and letters!</h1>
+<h3>Objective: try to find the most longuest word with these letters:</h3>
+<p class="letters"><% @letters.each do |letter| %>
+  <li class="letter"><%= letter[0] %></li>
+<% end %>
+</p>
+
+<form action="/score" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters_availables, @letters %>
+  <%= hidden_field_tag :start_time, Time.now %>
+  <input type="text" name="score" placeholder="Enter your word">
+  <input type="submit" value="Submit">
+</form>
+
+
+
